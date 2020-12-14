@@ -41,8 +41,12 @@ namespace _authRentalKendaraan_073
             //services.AddDefaultIdentity<IdentityUser>()
             //    .AddEntityFrameworkStores<ApplicationDbContext>();
 
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddIdentity<IdentityUser, IdentityRole>().AddDefaultUI().AddEntityFrameworkStores<RentalKendaraanContext>().AddDefaultTokenProviders();
+            //services.AddIdentity<IdentityUser, IdentityRole>().AddDefaultUI().AddEntityFrameworkStores<RentalKendaraanContext>().AddDefaultTokenProviders();
+            services.AddIdentity<IdentityUser, IdentityRole>()
+            .AddEntityFrameworkStores<RentalKendaraanContext>()
+            .AddDefaultTokenProviders();
 
         }
 
